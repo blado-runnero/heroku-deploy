@@ -29,8 +29,8 @@ MODEL_PATH = 'models/your_model.h5'
 
 # You can also use pretrained model from Keras
 # Check https://keras.io/applications/
-from keras.applications.mobilenet_v2 import MobileNetV2
-model = MobileNetV2(weights='imagenet')
+from keras.applications.resnet50 import ResNet50
+model = ResNet50(weights='resnet.h5')
 print('Model loaded. Check http://127.0.0.1:5000/')
 
 
