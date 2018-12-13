@@ -29,9 +29,6 @@ MODEL_PATH = 'models/your_model.h5'
 
 # You can also use pretrained model from Keras
 # Check https://keras.io/applications/
-from keras.applications.resnet50 import ResNet50
-model = ResNet50(weights='resnet.h5')
-print('Model loaded. Check http://127.0.0.1:5000/')
 
 
 def model_predict(img_path, model):
@@ -59,6 +56,10 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
+        from keras.applications.resnet50 import ResNet50
+        model = ResNet50(weights='resnet.h5')
+        print('Model loaded. Check http://127.0.0.1:5000/')
+
         # Get the file from post request
         f = request.files['file']
 
