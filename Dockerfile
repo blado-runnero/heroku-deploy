@@ -15,6 +15,4 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-RUN python app.py
-
 ENTRYPOINT [ "python" , "app.py"]
